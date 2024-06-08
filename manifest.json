@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "darikfy",
+  "version": "0.0.1",
+  "description": "activates darkmode on your current tab",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "/assets/browser_icon/icon16.png",
+    "48": "/assets/browser_icon/icon48.png",
+    "128": "/assets/browser_icon/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "darkify.io",
+    "default_icon": "/assets/browser_icon/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "contentscript.js"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ]
+}
